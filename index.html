@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Adventure of Kentut</title>
+</head>
+<body>
+    <h1>
+        Adventure of Kentut
+        <i class="fas fa-question" id="helpIcon" title="Instructions"></i>
+    </h1>
+
+<div id="statsbutton-container">   <!-- Trigger button to open stats modal -->
+<button class="statbtn" id="statsBtn">View Stats</button>
+</div>
+<!-- Modal for displaying stats -->
+        <div id="statsModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-button-stats">&times;</span>
+                <h2>Player Stats</h2>
+                <div>Health: <span id="health">150</span></div>
+                <div>Attack: <span id="attack">10</span></div>
+                <div>Rounds: <span id="position">0</span></div>
+                <div>Crit Damage: <span id="critDamage">1</span></div>
+                <div>Crit Chance: <span id="critChance">1</span></div>
+                <div>Dodge Chance: <span id="dodgeChance">1</span></div>
+            </div>
+        </div>
+
+    <div id="characters" class="character-container">
+        <div id="playerCharacter">
+            <img src="player.png" alt="Player Character" id="playerImage" />
+            <p>Player - Health: <span id="playerHealth">150</span></p>
+        </div>
+        <div id="bossCharacter">
+            <img src="boss.png" alt="Boss Character" id="bossImage" />
+            <p>Boss - Health: <span id="bossHealth">300</span></p>
+        </div>
+    </div>
+
+    <div id="output">Welcome to the dungeon! Click "Start" to begin your adventure.</div>
+    <div id="button-container">
+        <button class="btn visible" id="startBtn">Start</button>
+        <button class="btn" id="moveBtn">Move</button>
+        <button class="btn" id="quitBtn">Quit</button>
+        <button class="btn" id="attackBtn">Attack</button>
+    </div>
+
+    <!-- Pop-up for instructions -->
+    <div id="helpModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button-help">&times;</span>
+            <h2>Instructions</h2>
+            <p>Welcome to Adventure of Kentut! Here's how to play:</p>
+            <ul>
+                <li>Click "Start" to begin your journey.</li>
+                <li>Use "Move" to explore the dungeon.</li>
+                <li>"Attack" when encountering an enemy.</li>
+                <li>Defeat the boss to win!</li>
+                <li>Click "Quit" to end the game anytime.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+       // Get elements for help modal
+const helpIcon = document.getElementById("helpIcon");
+const helpModal = document.getElementById("helpModal");
+const closeHelpButton = document.querySelector(".close-button-help");  // Specific to help modal
+
+// Show the help modal when the icon is clicked
+helpIcon.addEventListener("click", () => {
+    helpModal.classList.remove("hidden");
+});
+
+// Hide the help modal when the close button is clicked
+closeHelpButton.addEventListener("click", () => {
+    helpModal.classList.add("hidden");
+});
+
+// Hide the help modal when clicking outside of the modal content
+helpModal.addEventListener("click", (event) => {
+    if (event.target === helpModal) {
+        helpModal.classList.add("hidden");
+    }
+});
+
+// Get elements for stats modal
+const statsBtn = document.getElementById("statsBtn");
+const statsModal = document.getElementById("statsModal");
+const closeStatsButton = document.querySelector(".close-button-stats");  // Specific to stats modal
+
+// Open the stats modal when the "View Stats" button is clicked
+statsBtn.addEventListener("click", () => {
+    statsModal.classList.remove("hidden");
+});
+
+// Close the stats modal when the close button is clicked
+closeStatsButton.addEventListener("click", () => {
+    statsModal.classList.add("hidden");
+});
+
+// Close the stats modal when clicking outside the modal content
+statsModal.addEventListener("click", (event) => {
+    if (event.target === statsModal) {
+        statsModal.classList.add("hidden");
+    }
+});
+
+    </script>
+</body>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Created by Ajiem. Special thanks to ChatGPT for assistance.</p>
+</footer>
+</html>
+
+    
