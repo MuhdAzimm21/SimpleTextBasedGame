@@ -6,12 +6,30 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <title>Dungeon Adventure</title>
+    <title>Chill Guy Adventure</title>
 </head>
 <body>
     <h1>
-        Dungeon Adventure
+        Chill Guy Adventure
         <i class="fas fa-question" id="helpIcon" title="Instructions"></i>
+
+        <div id="statsbutton-container">   <!-- Trigger button to open stats modal -->
+<button class="statbtn" id="statsBtn">View Stats</button>
+</div>
+<!-- Modal for displaying stats -->
+        <div id="statsModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-button-stats">&times;</span>
+                <h2>Player Stats</h2>
+                <div>Health: <span id="health">150</span></div>
+                <div>Attack: <span id="attack">10</span></div>
+                <div>Rounds: <span id="position">0</span></div>
+                <div>Crit Damage: <span id="critDamage">1</span></div>
+                <div>Crit Chance: <span id="critChance">1</span></div>
+                <div>Dodge Chance: <span id="dodgeChance">1</span></div>
+            </div>
+        </div>
+        
     </h1>
 
 <div id="statsbutton-container">   <!-- Trigger button to open stats modal -->
@@ -59,7 +77,7 @@
             <ul>
                 <li>Click "Start" to begin your journey.</li>
                 <li>Use "Move" to explore the dungeon.</li>
-                <li>"Attack" when encountering an enemy.</li>
+                <li>"Attack" when encountering an Boss.</li>
                 <li>Defeat the boss to win!</li>
                 <li>Click "Quit" to end the game anytime.</li>
             </ul>
